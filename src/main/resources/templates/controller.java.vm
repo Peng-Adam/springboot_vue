@@ -46,7 +46,7 @@ public class ${table.controllerName} {
     @Resource
     private ${table.serviceName} ${table.entityPath}Service;
 
-    @PostMapping
+    @PostMapping("/save")
     public Boolean save(@RequestBody ${entity} ${table.entityPath}) {
         return ${table.entityPath}Service.saveOrUpdate(${table.entityPath});
     }
@@ -60,7 +60,7 @@ public class ${table.controllerName} {
         return ${table.entityPath}Service.removeBatchByIds(ids);
     }
 
-    @GetMapping
+    @GetMapping("/findAll")
     public List<${entity}> findAll() {
         return ${table.entityPath}Service.list();
     }
@@ -81,6 +81,6 @@ public class ${table.controllerName} {
     }
 
 
-}
+
 
 #end

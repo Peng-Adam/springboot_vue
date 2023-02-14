@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * <p>
@@ -14,9 +16,11 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author Adam
- * @since 2023-02-13
+ * @since 2023-02-14
  */
-@TableName("sys_user")
+@Getter
+@Setter
+  @TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
 
@@ -50,91 +54,5 @@ public class User implements Serializable {
       @ApiModelProperty("图像")
       private String avatarUrl;
 
-    
-    public Integer getId() {
-        return id;
-    }
 
-      public void setId(Integer id) {
-          this.id = id;
-      }
-    
-    public String getUsername() {
-        return username;
-    }
-
-      public void setUsername(String username) {
-          this.username = username;
-      }
-    
-    public String getPassword() {
-        return password;
-    }
-
-      public void setPassword(String password) {
-          this.password = password;
-      }
-    
-    public String getNickname() {
-        return nickname;
-    }
-
-      public void setNickname(String nickname) {
-          this.nickname = nickname;
-      }
-    
-    public String getEmail() {
-        return email;
-    }
-
-      public void setEmail(String email) {
-          this.email = email;
-      }
-    
-    public String getPhone() {
-        return phone;
-    }
-
-      public void setPhone(String phone) {
-          this.phone = phone;
-      }
-    
-    public String getAddress() {
-        return address;
-    }
-
-      public void setAddress(String address) {
-          this.address = address;
-      }
-    
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-      public void setCreateTime(LocalDateTime createTime) {
-          this.createTime = createTime;
-      }
-    
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-      public void setAvatarUrl(String avatarUrl) {
-          this.avatarUrl = avatarUrl;
-      }
-
-    @Override
-    public String toString() {
-        return "User{" +
-              "id=" + id +
-                  ", username=" + username +
-                  ", password=" + password +
-                  ", nickname=" + nickname +
-                  ", email=" + email +
-                  ", phone=" + phone +
-                  ", address=" + address +
-                  ", createTime=" + createTime +
-                  ", avatarUrl=" + avatarUrl +
-              "}";
-    }
 }
